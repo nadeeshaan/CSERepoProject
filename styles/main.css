@@ -1,0 +1,68 @@
+/* 
+    Document   : main
+    Created on : Aug 8, 2013, 9:36:07 PM
+    Author     : Griffindor
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+}
+
+root { 
+    display: block;
+}
+
+.container{
+    background: #ccff99;
+    width: 80%;
+    margin: auto;  
+}
+
+.header{
+    background-color: #ffffff;
+    height: 42px;
+}
+
+.slideShow{
+    background: #ffff99;
+    height: 200px;
+}
+
+.sideMenu{
+    background: #ccff99;
+    width: 20%;
+    height: 800px;
+    float: left;
+}
+
+.content{
+    background: #99ffff;
+    height:800px; 
+    width: 100%;
+    float: left;
+}
+
+.footer{
+    background: #0033ff;
+    height: 50px;
+    clear: both;
+}
+
+.sideMenu->li{
+    list-style:none;
+    height:39px;
+    padding:2px;
+    width:40px;
+}
