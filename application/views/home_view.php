@@ -6,7 +6,7 @@
 
     <body>
         <div class="container">
-            <div class="header">
+            <div class="Loginheader">
                 <div id='cssmenu'>
                     <ul>
                         <li class='active'><a href="<?php echo base_url(); ?>/index.php/login/load_login_view"><span>Home</span></a></li>
