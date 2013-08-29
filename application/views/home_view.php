@@ -9,21 +9,16 @@
             <div class="Loginheader">
                 <div id='cssmenu'>
                     <ul>
-                        <li class='active'><a href="<?php echo base_url(); ?>/index.php/login/load_login_view"><span>Home</span></a></li>
-                        <li class='has-sub'><a href='#'><span>Products</span></a>
+                        <li class='active'><a href="<?php echo base_url(); ?>index.php/login"><span>Home</span></a></li>
+                        <li class='has-sub'><a href='#'><span>Documents</span></a>
                             <ul>
-                                <li><a href='#'><span>Widgets</span></a></li>
-                                <li><a href='#'><span>Menus</span></a></li>
-                                <li class='last'><a href='#'><span>Products</span></a></li>
+                                <li><a href='#'><span>Search Documents</span></a></li>
+                                <li><a href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
+                                <li><a href='#'><span>My Uploads</span></a></li>
                             </ul>
                         </li>
-                        <li class='has-sub'><a href='#'><span>Company</span></a>
-                            <ul>
-                                <li><a href='#'><span>About</span></a></li>
-                                <li class='last'><a href='#'><span>Location</span></a></li>
-                            </ul>
-                        </li>
-                        <li class='last'><a href='#'><span>Contact</span></a></li>
+                        <li class='last'><a href='#'><span>Profile</span></a></li>
+                        <li class='last'><a href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
                     </ul>
                 </div>
             </div>

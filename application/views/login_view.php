@@ -2,44 +2,21 @@
     <head>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/login.css">
-        <script type="text/javascript" src="<?php echo base_url(); ?>jScripts/jquery-1.6.1.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>jScripts/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>jScripts/jquery.validate.js"></script>
-
-        <script>
-            $(function() {
-                $("#loginForm").validate({
-                    rules: {
-                        index: {
-                            required: true
-                        },
-                        pword: {
-                            required: true
-                        }
-                    },
-                    messages: {
-                        index: {
-                            required: "  Please enter Index"
-                        },
-                        pword: {
-                            required: "  Please enter a Password"
-                        }
-                    }
-                });
-            });
-
-        </script>
+        
+        
 
     </head>
 
     <body>
         <section class="loginContainer">
-            <div id="header"></div>
+            <div id="header">
+                <div id="header2">
+                    <a href='<?php echo base_url(); ?>index.php/signup'><button type="button" id="signup">Sign Up</button></a>
+                </div>
+            </div>
             <div class="loginBody">
                 <h1>Login</h1>
-                <?php echo validation_errors(); ?>
-                <?php echo form_open('authenticateUser'); ?>
-                <form id="loginForm" method="post" name="loginForm" class="login">
+                <form id="loginForm" method="post" name="loginForm" class="login" action="<?php echo base_url(); ?>index.php/login/formSubmit">
                     <div id="labels">
                         <label for="index">Index Number</label><br>
                         <input type="text" id="index" name="index"><br>
@@ -55,8 +32,8 @@
                         </label>
                         <input type="submit" value="Submit" id="submit">
                     </div>
+                    <?php if(! is_null($msg)) echo $msg;?>
                 </form>
-
             </div>
         </section>
     </body>
