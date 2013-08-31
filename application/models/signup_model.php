@@ -7,8 +7,6 @@ class Signup_Model extends CI_Model {
     }
 
     function updateUser($data1, $data2) {
-
-        
             $this->db->insert('user', $data1);
             $this->db->insert('profile', $data2);
       

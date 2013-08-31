@@ -56,10 +56,14 @@ class Signup extends CI_Controller {
         $dirPath = $dirPath . $username . '\profilePics';
         $pictureP = $dirPath .'\\'. ( $_FILES['picture']['name']);
 
+        //set the configuration for the uploading file
         $config['upload_path'] = $dirPath;
         $config['allowed_types'] = 'png|jpg';
         $config['max_size'] = '1024';
-        $this->load->library('upload', $config); //loads the upload library
+        
+        //loads the upload library
+        $this->load->library('upload', $config); 
+        
         //check for the image directory
         if (!file_exists($dirPath)) {
             mkdir($dirPath, 0777, true);
@@ -85,7 +89,6 @@ class Signup extends CI_Controller {
         );
 
         $this->load->model('signup_model');
-
         $this->upload->do_upload('picture');
         $this->signup_model->updateUser($data1, $data2);
     }
