@@ -53,17 +53,18 @@ class Upload extends CI_Controller {
         } else {
             $oldProject = true;
         }
-
+        
         $projects = $this->upload_model->getProjects(); //get the project id of the document if the project already exists
-        if ($oldProject) {
+
             foreach ($projects as $prjs) {
                 if ($projName === $prjs->projname) {
                     $projId = $prjs->projid;
+                    break 1;
+                }
+                else{
+                    $projId = $prjs->projid+1;
                 }
             }
-        } else {                                          //if the project is a new one
-            $projId = count($this->currentProjects) + 1;
-        }
 
         $this->upload->do_upload('document');           //Upload the file to the relevent Directory
 
@@ -88,13 +89,9 @@ class Upload extends CI_Controller {
             );
             
             $this->upload_model->addNewProject($projectData);   //add new project and new document tables
-            $this->upload_model->addNewDocument($docData);
-            redirect('home/load_home_view');
-        } 
-        else {          
+        }     
             $this->upload_model->addNewDocument($docData);      //add new document to the document table
             redirect('home/load_home_view');
-        }
     }
 
 }
