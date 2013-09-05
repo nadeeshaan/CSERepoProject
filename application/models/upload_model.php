@@ -8,7 +8,8 @@ class Upload_Model extends CI_Model {
 
     function getProjects(){
         $this->load->database();
-        $query=  $this->db->query('SELECT projid,projname FROM project');
+        $currentUser = $this->session->userdata('indexNum');
+        $query=  $this->db->query("SELECT projid,projname FROM project WHERE username='$currentUser'");
         return $query->result();
     }
     

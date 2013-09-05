@@ -22,7 +22,7 @@ class Upload extends CI_Controller {
         $this->load->model('upload_model');
 
         $currentUser = $this->session->userdata('indexNum');
-        $dirPath = 'E:\\';
+        $dirPath = 'C:\wamp\www\uploads\\';
         $projName = $this->input->post("selectedText");
         $projDescription = $this->input->post('projDescription');
         $startDate = $this->input->post('startdate');
@@ -68,7 +68,17 @@ class Upload extends CI_Controller {
 
         $this->upload->do_upload('document');           //Upload the file to the relevent Directory
 
-
+        if (!($oldProject)) {                           //setting the project table's data only if the project is a new project
+            $projectData = array(
+                'projname' => $projName,
+                'projdescription' => $projDescription,
+                'startdate' => $startDate,
+                'username' => $currentUser
+            );
+            
+            $this->upload_model->addNewProject($projectData);   //add new project and new document tables
+        }
+        
         $docData = array(                               //setting the document table's data
             'filename' => $fileName,
             'path' => $filePath,
@@ -79,17 +89,7 @@ class Upload extends CI_Controller {
             'projid' => $projId,
             'privilege' => $priLevel
         );
-
-        if (!($oldProject)) {                           //setting the project table's data only if the project is a new project
-            $projectData = array(
-                'projname' => $projName,
-                'projdescription' => $projDescription,
-                'startdate' => $startDate,
-                'username' => $currentUser
-            );
-            
-            $this->upload_model->addNewProject($projectData);   //add new project and new document tables
-        }     
+        
             $this->upload_model->addNewDocument($docData);      //add new document to the document table
             redirect('home/load_home_view');
     }

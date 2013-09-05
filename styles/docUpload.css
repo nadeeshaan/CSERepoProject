@@ -1,0 +1,126 @@
+/* 
+    Document   : docUpload
+    Created on : Sep 6, 2013, 12:12:25 AM
+    Author     : Griffindor
+    Description:
+        Purpose of the stylesheet follows.
+*/
+#uploadContainer{
+    font-family: Arial;
+
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,0.33)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d4e4ef', endColorstr='#86aecc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    width: 900px;
+    height: 700px;
+    margin: auto; 
+}
+#docuploadTbl{
+    padding-top: 20px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+td{
+    padding: 10px 10px 10px 60px;
+}
+
+tr{
+    text-align: left;
+}
+
+label{
+    width: 150px;
+    margin-left: 10px;
+}
+
+#uploadHeading{
+    height: 40px;
+    width: 900px;
+    margin: auto;
+    padding-top: 15px;
+    text-align: center;
+    font-family: Arial;
+    font-size: medium;
+    font-weight: 800;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(38%, #d8e1e7), color-stop(53%, #b5c6d0), color-stop(100%, #f9fbfc));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9fbfc', GradientType=0 );
+}
+
+input[type=text],[type=password],[type=email]{
+    margin-left: -30px;
+    height: 25px;
+    width: 300px;
+    font-family: arial, verdana, serif;
+    font-size: 12px;
+    color: #333333;
+    vertical-align: middle;
+    padding-left: 2px;  
+    text-shadow: 0px 1px 0px #fff;  
+    -webkit-box-shadow: 0px 0px 10px #81ddf8;  
+    -moz-box-shadow: 0px 0px 10px #81ddf8;  
+    box-shadow: 0px 0px 10px #81ddf8;
+    outline: none;  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;  
+    border: 3px solid #fafafa; 
+    -webkit-transition: .3s ease-in-out;  
+    -moz-transition: .3s ease-in-out;
+}
+select{
+    margin-left: -30px;
+    height: 25px;
+    width: 300px;
+    font-family: arial, verdana, serif;
+    font-size: 12px;
+    color: #333333;
+    vertical-align: middle;
+    padding-left: 2px;  
+    text-shadow: 0px 1px 0px #fff;  
+    -webkit-box-shadow: 0px 0px 6px #81ddf8;  
+    -moz-box-shadow: 0px 0px 8px #81ddf8;  
+    box-shadow: 0px 0px 5px #81ddf8;
+    outline: none;  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;  
+    border: 3px solid #fafafa; 
+    -webkit-transition: .3s ease-in-out;  
+    -moz-transition: .3s ease-in-out;
+}
+
+textArea{
+    margin-left: -30px;
+    height: 100px;
+    width: 300px;
+    font-family: arial, verdana, serif;
+    font-size: 12px;
+    color: #333333;
+    vertical-align: middle;
+    padding-left: 2px;  
+    text-shadow: 0px 1px 0px #fff;  
+    -webkit-box-shadow: 0px 0px 6px #81ddf8;  
+    -moz-box-shadow: 0px 0px 8px #81ddf8;  
+    box-shadow: 0px 0px 5px #81ddf8;
+    outline: none;  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;  
+    border: 3px solid #fafafa; 
+    -webkit-transition: .3s ease-in-out;  
+    -moz-transition: .3s ease-in-out;
+}
+

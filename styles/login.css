@@ -6,163 +6,158 @@ root{
     display: block;
 }
 
+
+
 .loginContainer{
-    background: #3333ff;
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(249,249,249,0.67) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(249,249,249,0.67)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(249,249,249,0.67) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(249,249,249,0.67) 0%,rgba(134,174,204,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(249,249,249,0.67) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(249,249,249,0.67) 0%,rgba(134,174,204,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abf9f9f9', endColorstr='#86aecc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
     margin: auto;
-    width: 80%;
-    height: 100%;
+    width: 900px;
+    height: 510px;
+}
+
+#loginForm{
+    margin-top: 30px;
 }
 
 .loginBody{
-    position: relative;
-    padding: 20px 20px 20px;
+    position: absolute;
     margin: auto;
     width: 350px;
-    background: white;
+    margin-top: 150px;
+    margin-left: 280px;
+
+    background-color:rgba(134,173,204,0.2);
+
+    border-radius: 35px 5px 35px 5px;
+    -moz-border-radius: 35px 5px 35px 5px;
+    -webkit-border-radius: 35px 5px 35px 5px;
+    border: 0px solid #000000;
+
+    -moz-box-shadow: -11px 13px 18px #828282;
+    -webkit-box-shadow: -11px 13px 18px #828282;
+    box-shadow: -11px 13px 18px #828282;
 }
 
-input[type=submit] {
-    float: right;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    color: #000000;
-    padding: 5px 15px;
-    background: -moz-linear-gradient(
-        top,
-        #e2e7eb 0%,
-        #1a78eb);
-    background: -webkit-gradient(
-        linear, left top, left bottom, 
-        from(#e2e7eb),
-        to(#1a78eb));
-    -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    border-radius: 35px;
-    border: 1px solid #203c57;
-    -moz-box-shadow:
-        0px 1px 8px rgba(000,000,000,0.5),
-        inset 0px 0px 10px rgba(255,255,255,0.5);
-    -webkit-box-shadow:
-        0px 1px 8px rgba(000,000,000,0.5),
-        inset 0px 0px 10px rgba(255,255,255,0.5);
-    box-shadow:
-        0px 1px 8px rgba(000,000,000,0.5),
-        inset 0px 0px 10px rgba(255,255,255,0.5);
-    text-shadow:
-        0px -1px 0px rgba(000,000,000,0.7),
-        0px 1px 0px rgba(255,255,255,0.3);
+.logwinbutton {
+
+    -moz-box-shadow:inset 0px 0px 23px -13px #bee2f9;
+    -webkit-box-shadow:inset 0px 0px 23px -13px #bee2f9;
+    box-shadow:inset 0px 0px 23px -13px #bee2f9;
+
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf));
+    background:-moz-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background:-webkit-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background:-o-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background:-ms-linear-gradient(top, #63b8ee 5%, #468ccf 100%);
+    background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf',GradientType=0);
+
+    background-color:#63b8ee;
+
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+
+    border:1px solid #3866a3;
+
+    display:inline-block;
+    color:#14396a;
+    width: 120px;
+    font-family:arial;
+    font-size:14px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #7cacde;
+}
+.logwinbutton:hover {
+
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee));
+    background:-moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background:-webkit-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background:-o-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background:-ms-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
+    background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
+
+    background-color:#468ccf;
+}
+.logwinbutton:active {
+    position:relative;
+    top:1px;
 }
 
-input[type=submit]:active{
-    background:#999999;
+
+@font-face {
+    font-family: "Barber_shop";
+    src: url("../fonts/Barber_shop.ttf");
+}
+
+.error {
+    color:red;
+    font-family: Arial;
+    font-size: 15px;
+    text-align: center;
+}
+
+#loginTable{
+    font-family: Arial;
+    width: 100%;
+}
+td{
+    padding: 10px 10px 10px 10px;
+}
+
+tr{
+    text-align: left;
+}
+
+label{
+    width: 100px;
+    margin-left: 10px;
+}
+.buttonrw{
+    padding: 10px 10px 10px 25px;
+    text-align: center;
+}
+#login{
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    padding-left:425px;;
+    padding-top: 100px;
+    text-shadow: black 0.1em 0.1em 0.2em; 
 }
 
 input[type=text],[type=password]{
-    border:none; 
-    -webkit-border-radius:5px; 
-    -moz-border-radius:5px; 
-    border-radius:5px; 
-    -webkit-box-shadow:0 0 5px #666 inset; 
-    -moz-box-shadow:0 0 5px #666 inset; 
-    box-shadow:0 0 5px #666 inset; 
-    height:25px; 
-    line-height:25px; 
-    width:200px; 
-    text-indent:5px; 
-}
-
-.loginBody{
-    -webkit-border-radius:5px; 
-    -moz-border-radius:5px; 
-    border-radius:5px;
-
-}
-
-.loginBody h1 {
-    margin: -20px -20px 21px;
-    line-height: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #555;
-    text-align: center;
-    text-shadow: 0 1px white;
-    background: #f3f3f3;
-    border-bottom: 1px solid #cfcfcf;
-    border-radius: 3px 3px 0 0;
-    background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
-    background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
-    background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
-    background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
-    -webkit-box-shadow: 0 1px whitesmoke;
-    box-shadow: 0 1px whitesmoke;
+    margin-left: -30px;
+    height: 25px;
+    width: 175px;
+    font-family: arial, verdana, serif;
+    font-size: 12px;
+    color: #333333;
+    vertical-align: middle;
+    padding-left: 2px;  
+    text-shadow: 0px 1px 0px #fff;  
+    -webkit-box-shadow: 0px 0px 6px #81ddf8;  
+    -moz-box-shadow: 0px 0px 8px #81ddf8;  
+    box-shadow: 0px 0px 5px #81ddf8;
+    outline: none;  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;  
+    border: 3px solid #fafafa; 
+    -webkit-transition: .3s ease-in-out;  
+    -moz-transition: .3s ease-in-out;
 }
 
 
-
-#labels{
-    margin-top: 10px;
-}
-
-#signup{
-    float: right;
-    margin-right: 40px;
-    margin-top: 35px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    color: #000000;
-    padding: 5px 15px;
-    background: -moz-linear-gradient(
-        top,
-        #e2e7eb 0%,
-        #1a78eb);
-    background: -webkit-gradient(
-        linear, left top, left bottom, 
-        from(#e2e7eb),
-        to(#1a78eb));
-    -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    border-radius: 35px;
-    border: 1px solid #203c57;
-    -moz-box-shadow:
-        0px 1px 8px rgba(000,000,000,0.5),
-        inset 0px 0px 10px rgba(255,255,255,0.5);
-    -webkit-box-shadow:
-        0px 1px 8px rgba(000,000,000,0.5),
-        inset 0px 0px 10px rgba(255,255,255,0.5);
-    box-shadow:
-        0px 1px 8px rgba(000,000,000,0.5),
-        inset 0px 0px 10px rgba(255,255,255,0.5);
-    text-shadow:
-        0px -1px 0px rgba(000,000,000,0.7),
-        0px 1px 0px rgba(255,255,255,0.3);
-
-}
-
-#signup:active{
-    background:#999999;
-}
-
-#header{
-    height: 20%;
-    width: auto;
-    background: #3333ff;
-}
-
-#header2{
-    height: 70%;
-    width: auto;
-    background: #3366ff;
-}
-#header2 a{
-    text-decoration: none;
-}
-
-
-#loginForm .error {
-    color: #ff0033;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-style: oblique;
-}
 

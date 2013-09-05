@@ -9,15 +9,17 @@ class Home extends CI_Controller {
     }
 
     function load_home_view() {
-            $this->load->view("home_view");
+        $this->load->helper("url");
+        $this->load->view("home_view");
     }
-    
-    function logout(){
-        
+
+    function logout() {
+
         $this->session->unset_userdata('logged_in');
         session_destroy();
-        redirect('home','refresh');
+        redirect('home', 'refresh');
     }
+
 }
 
 ?>

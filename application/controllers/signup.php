@@ -18,7 +18,7 @@ class Signup extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('confirmPword', 'Confirm Password', 'callback_confirm_pword[' . $this->input->post('password') . ']');
         $this->form_validation->set_rules('gender', 'Gender', 'callback_gender_check');
-        $this->form_validation->set_rules('month', 'Date', 'callback_dob_check');
+        $this->form_validation->set_rules('birthday', 'Birth Day', 'callback_dob_check');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('signup_view');
@@ -30,7 +30,7 @@ class Signup extends CI_Controller {
 
     function insertData() {
 
-        $dirPath = 'E:\\';  //set the base directory
+        $dirPath = 'C:\wamp\www\uploads\\';  //set the base directory
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
@@ -40,17 +40,14 @@ class Signup extends CI_Controller {
         $mobile = $this->input->post('mobile');
         $aboutme = $this->input->post('aboutme');
         $genderSelect = $this->input->post('gender');
-        $monthSelect = $this->input->post('month');
+        $dob = $this->input->post('birthdaty');
 
         //get the selected gender value
         if ($genderSelect == 'Male') {
             $gender = TRUE;
         } elseif ($genderSelect == 'Female') {
             $gender = FALSE;
-        }
-
-        //year generate
-        $dob = $this->input->post('year') . '-' . $monthSelect . '-' . $this->input->post('date');
+        }        
 
         //set the user's directory
         $dirPath = $dirPath . $username . '\profilePics';
@@ -115,7 +112,7 @@ class Signup extends CI_Controller {
 
     //check the validity of the entered date
     function dob_check($month) {
-        if ($month === '0' || $this->input->post('year') === '' || $this->input->post('date') === '') {
+        if ($month === '') {
             $this->form_validation->set_message('dob_check', 'Invalid Date');
             return FALSE;
         } else {
