@@ -1,8 +1,8 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
+///* 
+// * To change this template, choose Tools | Templates
+// * and open the template in the editor.
+// */
+//
 $(function() {
     $("#birthday").datepicker();
 });
@@ -15,16 +15,13 @@ $(document).ready(function() {
     var firstname = $("#firstname");
     var lastname = $('#lastname');
     var username = $('#username');
-    var password = $('#password');
-    var confirmPword = $('#confirmPword');
-    var email=$('email');
-    var mobile=$('mobile');
-    var aboutMe=$('aboutMe');
-    var gender=$('gender');
-    var birthday=$('birthday');
-    
-
-    //declares the span texts
+    var password = document.getElementById('password');
+    var confirmPword = document.getElementById('confirmPword');
+    var email = $('#email');
+    var mobile = $('#mobile');
+    var aboutMe = $('#aboutMe');
+    var gender = $('#gender');
+    var birthday = $('#birthday');
 
     var fName = $('#fName');
     var lName = $('#lName');
@@ -32,13 +29,11 @@ $(document).ready(function() {
     var pswd = $('#pswd');
     var cnpswd = $('#snpswd');
     var eml = $('#eml');
-    var gndr=$('#gndr');
-    var bday=$('#bday');
-    
+    var gndr = $('#gndr');
+    var bday = $('#bday');
 
     form.submit(function() {
 
-        //validate the input fields
         if (checkEmpty(firstname, fName)) {
             validSubmit = false;
         }
@@ -48,45 +43,56 @@ $(document).ready(function() {
         if (checkEmpty(username, iNum)) {
             validSubmit = false;
         }
-        if (checkEmpty(gender, gndr)) {
+        if (checkEmpty(email, eml)) {
             validSubmit = false;
         }
         if (checkEmpty(birthday, bday)) {
             validSubmit = false;
         }
-
+        if (checkGenderSelect()) {
+            validSubmit = false;
+        }
+        if(passwordDontMatch()){
+            validSubmit=false;
+        }
+        
+        
         return validSubmit;
 
-    });
+    });  
 
-    //function check the empty input fields
     function checkEmpty(field, spn) {
         if (field.val() === "") {
-
-            //if the start date field is disabled then neglect checking for the
-            //empty input field
-            if (field === strt & field.is(':disabled')) {
-                return false;
-            }
-            else {
-                spn.text(field.attr("name") + " Field cannot be empty");
-                return true;
-            }
+            spn.text(field.attr("name") + " Field cannot be empty");
+            return true;
         }
         else {
             spn.text("*");
             return false;
         }
     }
-
-    //check the privilege input field contains a valid 
-    //privilege level
-    function privilegeTest() {
-        if (privilege.val() === '0') {
-            privilegeText.text('Privilege level cannot be empty');
+    function checkGenderSelect(){
+        if(gender.val()==='0'){
+            gndr.text('Please select your Gender');
             return true;
         }
-        else {
+        else{
+            return false;
+        }
+    }
+    
+    function passwordDontMatch(){
+        if(password.value===""){
+            pswd.text('Password field cannot be Empty');
+            return true;
+        }
+        else if(password.value!=="" && password.value!==confirmPword.value){
+            pswd.text('Password confirmation invalid');
+            password.value="";
+            confirmPword.value="";
+            return true;
+        }
+        else{
             return false;
         }
     }

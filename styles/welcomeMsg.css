@@ -1,0 +1,62 @@
+/* 
+    Document   : welcomeMsg
+    Created on : Sep 7, 2013, 9:49:04 PM
+    Author     : Griffindor
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.welcomeContainer{
+    /*    background: #FFFFFF;*/
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,0.33)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d4e4ef', endColorstr='#86aecc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    width: 900px;
+    height: 600px;
+    margin: auto;  
+}
+
+@font-face {
+    font-family: "Black_rose";
+    src: url("../fonts/BLACKR~1.TTF");
+}
+
+img.resize{
+
+    width: 150px;
+    height: auto;
+    margin-left: 100px;
+    margin-top: 90px;
+}
+
+#welcomeButton{
+    position: absolute;
+    margin-left: 425px;
+    margin-top: 225px;
+    text-decoration-line: none;
+}
+
+#heading{
+    margin: auto;
+    alignment-adjust: central;
+    padding-top: 75px;
+}
+
+tr{
+    alignment-adjust: central;
+}
+td{
+    text-align: center;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 48px;
+    font-style: italic;
+    color: #ffffff;
+    text-shadow:0px 0px 0 rgb(228,228,228),-1px 1px 0 rgb(201,201,201),-2px 2px 0 rgb(173,173,173),-3px 3px 0 rgb(146,146,146),-4px 4px 0 rgb(119,119,119), -5px 5px 0 rgb(92,92,92),-6px 6px 5px rgba(0,0,0,0.4),-6px 6px 1px rgba(0,0,0,0.5),0px 0px 5px rgba(0,0,0,.2);
+
+}
+

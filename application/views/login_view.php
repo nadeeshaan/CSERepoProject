@@ -2,7 +2,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/login.css">
-
+        
+        <title>Project Repository Login</title>
 
 
     </head>

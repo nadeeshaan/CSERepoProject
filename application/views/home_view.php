@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/nivo-slider.css" media="screen">        
         <script src="<?php echo base_url(); ?>/jScripts/jquery-1.9.1.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/jScripts/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+        
+        <title>Welcome:Home</title>
 
     </head>
 
@@ -21,7 +23,7 @@
                     </ul>
                 </li>
                 <li class='last'><a href='#'><span>Profile</span></a></li>
-                <li class='last'><a href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
+                <li class='last'><a href='<?php echo base_url(); ?>index.php/logout'>Logout</a></li>
             </ul>
         </div>
 

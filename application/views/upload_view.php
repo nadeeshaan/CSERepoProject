@@ -11,12 +11,6 @@
         <script src="<?php echo base_url(); ?>/jScripts/jquery-ui.js"></script>
         <script src="<?php echo base_url(); ?>/jScripts/jquery.validate.min.js"></script>
         <script src="<?php echo base_url(); ?>/jScripts/uploadValidation.js"></script>
-        <script>
-            $(function() {
-                $("#startdate").datepicker();
-            });
-        </script>
-        <!--end of the date picker-->
 
         <script type="text/javascript">
             //This method is responsible for loading the selected option of the dropdown list to the text field 

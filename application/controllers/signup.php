@@ -8,27 +8,11 @@ class Signup extends CI_Controller {
 
     function index() {
         $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
-
-        $this->form_validation->set_rules('firstname', 'First Name', 'required');
-        $this->form_validation->set_rules('lastname', 'Last Name', 'required');
-        $this->form_validation->set_rules('username', 'Index Number', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('confirmPword', 'Confirm Password', 'callback_confirm_pword[' . $this->input->post('password') . ']');
-        $this->form_validation->set_rules('gender', 'Gender', 'callback_gender_check');
-        $this->form_validation->set_rules('birthday', 'Birth Day', 'callback_dob_check');
-
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('signup_view');
-        } else {
-            $this->insertData();
-            redirect('home/load_home_view');
-        }
+        $this->load->view('signup_view');
     }
 
     function insertData() {
+        $this->load->model('signup_model');
 
         $dirPath = 'C:\wamp\www\uploads\\';  //set the base directory
         $username = $this->input->post('username');
@@ -47,20 +31,20 @@ class Signup extends CI_Controller {
             $gender = TRUE;
         } elseif ($genderSelect == 'Female') {
             $gender = FALSE;
-        }        
+        }
 
         //set the user's directory
         $dirPath = $dirPath . $username . '\profilePics';
-        $pictureP = $dirPath .'\\'. ( $_FILES['picture']['name']);
+        $pictureP = $dirPath . '\\' . ( $_FILES['picture']['name']);
 
         //set the configuration for the uploading file
         $config['upload_path'] = $dirPath;
         $config['allowed_types'] = 'png|jpg';
         $config['max_size'] = '1024';
-        
+
         //loads the upload library
-        $this->load->library('upload', $config); 
-        
+        $this->load->library('upload', $config);
+
         //check for the image directory
         if (!file_exists($dirPath)) {
             mkdir($dirPath, 0777, true);
@@ -85,9 +69,10 @@ class Signup extends CI_Controller {
             'picture' => $pictureP
         );
 
-        $this->load->model('signup_model');
+
         $this->upload->do_upload('picture');
         $this->signup_model->updateUser($data1, $data2);
+        redirect('home/load_home_view');
     }
 
     //check the confirmation password is valid

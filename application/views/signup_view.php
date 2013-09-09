@@ -25,27 +25,26 @@
         <div id="signupHeading">Create Your Account in CSE Project Repository</div>
         <div id="signupContainer">
 
-            <form id="signupForm" method="post" name="signupForm" class="signup" action="<?php echo base_url(); ?>index.php/signup" enctype="multipart/form-data">
-                <!--        <?php echo validation_errors(); ?>
-                <?php echo form_open('signupForm'); ?>
-                -->
+            <form id="signupForm" method="post" name="signupForm" action="<?php echo base_url(); ?>index.php/Login_Success" class="signup"  enctype="multipart/form-data">
+                
+                
                 <table id="signUpTbl">
                     <tr>
                         <td><label for="firstname">First Name</label></td>
-                        <td><input type="text" id="firstname" name="firstname"><span id="fName"></span><br></td>
+                        <td><input type="text" id="firstname" name="firstname"><span id="fName">*</span><br></td>
 
                         <td><label for="lastname">Last Name</label></td>
-                        <td><input type="text" id="lastname" name="lastname"><span id="lName"></span><br></td>
+                        <td><input type="text" id="lastname" name="lastname"><span id="lName">*</span><br></td>
                     </tr>
 
                     <tr>
                         <td><label for="username">Index Number</label></td>
-                        <td><input type="text" id="username" name="username"><span id="iNum"></span><br></td>
+                        <td><input type="text" id="username" name="username"><span id="iNum">*</span><br></td>
                     </tr>
 
                     <tr>
                         <td><label for="password">Password</label></td>
-                        <td><input type="password" id="password" name="password"><span id="pswd"></span><br></td>
+                        <td><input type="password" id="password" name="password"><span id="pswd">*</span><br></td>
 
                         <td><label for="confirmPword">Confirm Password</label></td>
                         <td><input type="password" id="confirmPword" name="confirmPword"><span id="cnpswd"></span><br></td>
@@ -53,7 +52,7 @@
 
                     <tr>
                         <td><label for="email">E-mail</label></td>
-                        <td><input type="email" id="email" name="email"><span id="eml"></span><br></td>
+                        <td><input type="email" id="email" name="email"><span id="eml">*</span><br></td>
 
                         <td><label for="mobile">Mobile Number</label></td>
                         <td><input type="text" id="mobile" name="mobile"><span id="mob"></span><br></td>
@@ -62,17 +61,17 @@
                     <tr>
                         <td><label for="gender">Gender</label></td>
                         <td colspan="2">
-                            <select name="gender" id="gender"> 
+                            <select id="gender" name="gender"> 
                                 <option value= '0'> Choose..</option> 
                                 <option value='Male'>Male</option> 
                                 <option value='Female'>Female</option> 
-                            </select><span id="gndr"></span><br>
+                            </select><span id="gndr">*</span><br>
                         </td>
                     </tr>
 
                     <tr>
                         <td><label for="birthday">Birth Day</label></td>
-                        <td colspan="2"><input type="text" name="birthdaty" id="birthday" placeholder="Birth Day" /><span id="bday"></span><br></td>
+                        <td colspan="2"><input type="text" name="birthday" id="birthday" placeholder="Birth Day" /><span id="bday">*</span><br></td>
                     </tr>
                     
                     <tr>
@@ -94,17 +93,7 @@
                 </table>
             </form>
         </div>
-
-<!--                <input type="text" id="year" name="year" placeholder="Year">
-<select name="month" id="month"> 
-    <option value="0"> Month </option> 
-    <option value="1">January</option> <option value="2">February</option>
-    <option value="3">March</option> <option value="4">April</option>
-    <option value="5">May</option> <option value="6">June</option>
-    <option value="7">July</option> <option value="8">August</option>
-    <option value="9">September</option> <option value="10">October</option>
-    <option value="11">November</option> <option value="12">December</option>
-</select>-->
+        
         <div class="pageFooter">
             <span id="copyright">&#169 Copyright Nadeeshaan Gunasinghe</span><br>
             <span id="dept">Department of Computer Science and Engineering</span>

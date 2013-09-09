@@ -5,7 +5,7 @@
 
 //Loads the date picker
 $(function() {
-    $("#startdate").datepicker();
+    $("#startdate").datepicker({ dateFormat: "yy-mm-dd" });
 });
 
 $(document).ready(function() {
