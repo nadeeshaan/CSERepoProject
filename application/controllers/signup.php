@@ -69,7 +69,7 @@ class Signup extends CI_Controller {
             'picture' => $pictureP
         );
 
-
+        //uploads the user profile picture to the server
         $this->upload->do_upload('picture');
         $this->signup_model->updateUser($data1, $data2);
         redirect('home/load_home_view');

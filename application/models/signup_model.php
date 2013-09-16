@@ -6,6 +6,7 @@ class Signup_Model extends CI_Model {
         parent::__construct();
     }
 
+    //insert data of the new users
     function updateUser($data1, $data2) {
             $this->db->insert('user', $data1);
             $this->db->insert('profile', $data2);

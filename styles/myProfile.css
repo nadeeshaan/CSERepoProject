@@ -1,13 +1,12 @@
 /* 
-    Document   : docUpload
-    Created on : Sep 6, 2013, 12:12:25 AM
+    Document   : myProfile
+    Created on : Sep 15, 2013, 8:11:10 PM
     Author     : Griffindor
     Description:
         Purpose of the stylesheet follows.
 */
-#uploadContainer{
-    font-family: Arial;
 
+#myProfileContainer{
     background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,0.33)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -17,53 +16,15 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d4e4ef', endColorstr='#86aecc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
     width: 900px;
-    min-height: 700px;
-    height: auto;
-    margin: auto; 
-}
-#docuploadTbl{
-    padding-top: 20px;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-td{
-    padding: 10px 10px 10px 60px;
-}
-
-tr{
-    text-align: left;
-}
-
-label{
-    width: 150px;
-    margin-left: 10px;
-}
-
-#uploadHeading{
-    height: 40px;
-    width: 900px;
+    min-height: 800px;
     margin: auto;
-    padding-top: 15px;
-    text-align: center;
-    font-family: Arial;
-    font-size: medium;
-    font-weight: 800;
-    background: #ffffff;
-    background: -moz-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(38%, #d8e1e7), color-stop(53%, #b5c6d0), color-stop(100%, #f9fbfc));
-    background: -webkit-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: -o-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: -ms-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: linear-gradient(to bottom, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9fbfc', GradientType=0 );
 }
+
 
 input[type=text],[type=password],[type=email]{
-    margin-left: -30px;
+    margin-left: 30px;
     height: 25px;
-    width: 300px;
+    width: 200px;
     font-family: arial, verdana, serif;
     font-size: 12px;
     color: #333333;
@@ -81,15 +42,13 @@ input[type=text],[type=password],[type=email]{
     -webkit-transition: .3s ease-in-out;  
     -moz-transition: .3s ease-in-out;
 }
-select{
-    margin-left: -30px;
-    height: 25px;
-    width: 300px;
+
+textArea{
+    margin-left: 107px;
+    width: 200px;
     font-family: arial, verdana, serif;
     font-size: 12px;
     color: #333333;
-    vertical-align: middle;
-    padding-left: 2px;  
     text-shadow: 0px 1px 0px #fff;  
     -webkit-box-shadow: 0px 0px 6px #81ddf8;  
     -moz-box-shadow: 0px 0px 8px #81ddf8;  
@@ -103,25 +62,73 @@ select{
     -moz-transition: .3s ease-in-out;
 }
 
-textArea{
-    margin-left: -30px;
-    height: 100px;
-    width: 300px;
-    font-family: arial, verdana, serif;
-    font-size: 12px;
-    color: #333333;
-    vertical-align: middle;
-    padding-left: 2px;  
-    text-shadow: 0px 1px 0px #fff;  
-    -webkit-box-shadow: 0px 0px 6px #81ddf8;  
-    -moz-box-shadow: 0px 0px 8px #81ddf8;  
-    box-shadow: 0px 0px 5px #81ddf8;
-    outline: none;  
-    -webkit-border-radius: 3px;  
-    -moz-border-radius: 3px;  
-    border-radius: 3px;  
-    border: 3px solid #fafafa; 
-    -webkit-transition: .3s ease-in-out;  
-    -moz-transition: .3s ease-in-out;
+
+#proPic{
+    width: 150px;
+    height: auto;
+}
+.expList ul, li {
+    list-style: none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+}
+.expList p {
+    margin:0;
+    display:block;
+}
+.expList p:hover {
+    background-color:#121212;
+}
+.expList li {
+    line-height:150%;
+    text-indent:0px;
+    background-position: 1px 3px;
+    padding-left: 20px;
+    background-repeat: no-repeat;
+}
+
+/* Collapsed state for list element */
+.expList .collapsed {
+    background-image: url(../images/ArrowDown.png);
+}
+/* Expanded state for list element
+/* NOTE: This class must be located UNDER the collapsed one */
+.expList .expanded {
+    background-image: url(../images/ArrowUp.png);
+}
+
+#myProfileTbl{
+    padding-top: 35px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+td{
+    padding: 5px 10px 10px 60px;
+    height: 20px;
+}
+
+tr{
+    text-align: left;
+}
+
+#myProfBtn{
+    margin-top: 100px;
+    margin-bottom: 75px;
+    margin-left: 650px;
+    left:200px;
+}
+
+#proPic{
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 2px solid #363136;
+
+    -webkit-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,1);
 }
 

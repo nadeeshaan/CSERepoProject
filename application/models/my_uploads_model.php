@@ -10,6 +10,7 @@
             parent::__construct();
         }
         
+        //data are retrived from the database to send to the myuploads view
         function getProjects(){
             $currentUser = $this->session->userdata('indexNum');
             $query=  $this->db->query("SELECT projname,projdescription,startdate,projid FROM project WHERE username='$currentUser'");

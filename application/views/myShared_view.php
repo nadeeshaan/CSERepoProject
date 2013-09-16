@@ -1,12 +1,10 @@
 <html>
-
     <head>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>/styles/myUploads.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/main.css">
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/menu.css">
-        <script type="text/javascript" src="<?php echo base_url(); ?>/jScripts/jquery-1.9.1.js"></script>
-
-
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/menu.css">  
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/myShared.css"> 
+        <script src="<?php echo base_url(); ?>/jScripts/jquery-1.9.1.js" type="text/javascript"></script>
+        
         <script>
             $(function prepareList() {
                 $('#expList').find('li:has(ul)').unbind('click').click(function(event) {
@@ -34,9 +32,8 @@
                 })
             });
         </script>
-        
-        <title>MyUploads</title>
-        
+
+        <title>My Shared</title>
     </head>
 
     <body>
@@ -54,58 +51,72 @@
                     </ul>
                 </li>
                 <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
-                <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
+                <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'>Logout</a></li>
                 <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
+
         <div class="pageHeader">
             <span id="mainHeading">CSE Central Project Repository</span><br>
         </div>
-        <div class="container">
+        
+        <div class="pageTitle">Shared Documents With You</div>
+        
+        <div id="mySharedContainer">
             <div id="projectContainer" style="position: absolute">
-                <form>
-                    <table>
+                <form action="<?php echo base_url(); ?>index.php/myShared/changeNotified">
+                    
                         <ul id="expList">
-                            <?php
-                            foreach ($myprojects as $prjs) {
-                                    echo
-                                    '<li>' . $prjs->projname .
-                                    '<ul>
-                                        <li>See more
-                                                <ul>
-                                                    <li>
-                                                        <span>' . $prjs->projdescription . '</span><br>
-                                                        <span>Started on: ' . $prjs->startdate . '</span>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        <li>';
-                                    foreach ($prjdocs as $doc) {
-                                        if ($doc->projid === $prjs->projid) {
-                                            echo
-                                            '<div id=filename>' .
-                                            $doc->filename .
-                                            '</div>
-                                             <a href="/uploads/' . $doc->username . '/projects/' . $prjs->projname . '/' . $doc->filename . '" target="_blank">Download</a>';
-                                        }
-                                    }
-                                    echo
-                                    '</li>
-                                   </ul>
-                               </li><hr>';
+                        <?php
+                        if(count($shared)>0){
+                            foreach ($shared as $shr) {
+                                echo
+                                '<li>' . $shr->fname .
+                                '<ul>
+                                    <li>See more
+                                            <ul>
+                                                <li>
+                                                    <span>Owner: ' . $shr->username . '</span><br>
+                                                    <span>Document Description: </span><br>
+                                                    <span>---' . $shr->des . '</span>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    <li>';
+    //                            foreach ($prjdocs as $doc) {
+    //                                if ($doc->projid === $shared->projid) {
+    //                                    echo
+    //                                    '<div id=filename>' .
+    //                                    $doc->filename .
+    //                                    '</div>
+    //                                     <a href="/uploads/' . $doc->username . '/projects/' . $prjs->projname . '/' . $doc->filename . '" target="_blank">Download</a>';
+    //                                }
+    //                            }
+                                echo
+                                '</li>
+                               </ul>
+                           </li><hr>';
                             }
-                            ?>
-                        </ul>
-                    </table>
+                        }
+                        else{
+                            echo 'You have no shared Documents with you At the Moment';
+                        }
+                        ?>
+                    </ul>
+                    
+                    <input type="submit" value="Accept" class="myShareButton" id="myShareButton">
                 </form>
                 
             </div>
-        </div>
+        </div> 
+        
+        <!--Set the footer -->
         <div class="pageFooter">
             <span id="copyright">&#169 Copyright Nadeeshaan Gunasinghe</span><br>
             <span id="dept">Department of Computer Science and Engineering</span>
             <a id="myemail" href="mailto:nadeeshaangunasinghe@gmail.com"><span>Email Me</span></a>
             <a id="blog" href="http://www.nadeeshaan.blogspot.com/"><span>Blogger</span></a>
         </div>
+        
     </body>
 </html>

@@ -15,6 +15,11 @@ class My_Uploads extends CI_Controller {
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->model('my_uploads_model');
+        $this->load->model('sharedWithMe_model');
+        //retrive the projects and the project documents
+        //which is related to the user
+        
+        $data['shared'] = $this->sharedWithMe_model->getShareDocs();
         $data['myprojects'] = $this->my_uploads_model->getProjects();
         $data['prjdocs'] = $this->my_uploads_model->getDocuments();
         $this->load->view('my_uploads_view', $data);

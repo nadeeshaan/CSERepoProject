@@ -1,5 +1,8 @@
 <?php
 
+/*
+ * user logout is handled here
+ */
     class Logout extends CI_Controller{
         
         function __construct() {

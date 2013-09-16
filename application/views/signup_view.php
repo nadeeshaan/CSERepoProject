@@ -15,6 +15,8 @@
                 $("#birthday").datepicker();
             });
         </script>
+        
+        <title>SignUp</title>
     </head>
 
     <body>
@@ -22,10 +24,10 @@
             <span id="mainHeading">CSE Central Project Repository</span><br>
         </div>
 
-        <div id="signupHeading">Create Your Account in CSE Project Repository</div>
+        <div class="pageTitle">Create Your Account in CSE Project Repository</div>
         <div id="signupContainer">
 
-            <form id="signupForm" method="post" name="signupForm" action="<?php echo base_url(); ?>index.php/Login_Success" class="signup"  enctype="multipart/form-data">
+            <form id="signupForm" method="post" name="signupForm" action="<?php echo base_url(); ?>index.php/signup/insertData" class="signup"  enctype="multipart/form-data">
                 
                 
                 <table id="signUpTbl">
@@ -75,19 +77,19 @@
                     </tr>
                     
                     <tr>
-                        <td id="txt"><label for="aboutme">About Me</label></td>
-                        <td colspan="2"><textarea rows="10" id="aboutMe" name="aboutme"></textarea><br></td>
-                    </tr>
+                        <td><label for="aboutme">About Me</label></td>
+                        <td colspan="2"><textarea id="aboutMe" name="aboutme"></textarea><br></td>
+                    </tr> 
 
                     <tr>
                         <td colspan="2">
-                            <input name="picture" type="file">
+                            <input name="picture" type="file" id="proPic">
                         </td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
-                            <input type="submit" value="Sign Up" class="signwinbutton" id="signupBtn">
+                            <input type="submit" value="Sign Up" class="sitebutton" id="signupBtn">
                         </td>
                     </tr>
                 </table>

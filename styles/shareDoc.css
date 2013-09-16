@@ -1,19 +1,12 @@
 /* 
-    Document   : signup
-    Created on : Aug 28, 2013, 4:46:52 PM
+    Document   : shareDoc
+    Created on : Sep 11, 2013, 11:23:22 PM
     Author     : Griffindor
     Description:
         Purpose of the stylesheet follows.
 */
 
-.error {
-    color: red;
-}
-
-#signupContainer{
-
-    font-family: Arial;
-
+#docShareContainer{
     background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,0.33)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -27,27 +20,6 @@
     margin: auto; 
 }
 
-input[type=text],[type=password],[type=email]{
-    margin-left: -30px;
-    height: 25px;
-    width: 200px;
-    font-family: arial, verdana, serif;
-    font-size: 12px;
-    color: #333333;
-    vertical-align: middle;
-    padding-left: 2px;  
-    text-shadow: 0px 1px 0px #fff;  
-    -webkit-box-shadow: 0px 0px 10px #81ddf8;  
-    -moz-box-shadow: 0px 0px 10px #81ddf8;  
-    box-shadow: 0px 0px 10px #81ddf8;
-    outline: none;  
-    -webkit-border-radius: 3px;  
-    -moz-border-radius: 3px;  
-    border-radius: 3px;  
-    border: 3px solid #fafafa; 
-    -webkit-transition: .3s ease-in-out;  
-    -moz-transition: .3s ease-in-out;
-}
 select{
     margin-left: -30px;
     height: 25px;
@@ -70,7 +42,27 @@ select{
     -moz-transition: .3s ease-in-out;
 }
 
-.signwinbutton {
+#docShareTbl{
+    padding-top: 15px;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+td{
+    padding: 30px 10px 10px 60px;
+}
+
+tr{
+    text-align: left;
+}
+
+label{
+    width: 150px;
+    margin-left: 5px;
+}
+
+.docShareButton {
 
     -moz-box-shadow:inset 0px 0px 23px -13px #bee2f9;
     -webkit-box-shadow:inset 0px 0px 23px -13px #bee2f9;
@@ -103,7 +95,7 @@ select{
     text-shadow:0px -1px 0px #7cacde;
 }
 
-.signwinbutton:hover {
+.docShareButton:hover {
 
     background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee));
     background:-moz-linear-gradient(top, #468ccf 5%, #63b8ee 100%);
@@ -115,83 +107,10 @@ select{
 
     background-color:#468ccf;
 }
-.signwinbutton:active {
-    margin-top: 100px;
-    margin-bottom: 75px;
-    margin-left: 650px;
-    left:200px;
+.docShareButton:active {
+    position:relative;
+    top:1px;
 }
 
-#signUpTbl{
-    position: relative;
-    padding-top: 15px;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: 500;
-}
 
-td{
-    padding: 30px 10px 10px 60px;
-    width: auto;
-}
 
-tr{
-    text-align: left;
-}
-
-label{
-    width: 150px;
-    margin-left: 5px;
-}
-
-textArea{
-
-    position: relative;
-    margin-left: -30px;
-    max-width: 400px;
-    min-height: 175px;
-    width:300px;
-    font-family: arial, verdana, serif;
-    font-size: 12px;
-    color: #333333;
-    text-shadow: 0px 1px 0px #fff;  
-    -webkit-box-shadow: 0px 0px 6px #81ddf8;  
-    -moz-box-shadow: 0px 0px 8px #81ddf8;  
-    box-shadow: 0px 0px 5px #81ddf8;
-    outline: none;  
-    -webkit-border-radius: 3px;  
-    -moz-border-radius: 3px;  
-    border-radius: 3px;  
-    border: 3px solid #fafafa; 
-    -webkit-transition: .3s ease-in-out;  
-    -moz-transition: .3s ease-in-out;
-}
-
-#txt{
-    position: absolute;
-    margin-left: 410px;
-    margin-top: -100px;
-}
-
-#signupHeading{
-    height: 40px;
-    width: 900px;
-    margin: auto;
-    padding-top: 15px;
-    text-align: center;
-    font-family: Arial;
-    font-size: medium;
-    font-weight: 800;
-    background: -moz-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(38%, #d8e1e7), color-stop(53%, #b5c6d0), color-stop(100%, #f9fbfc));
-    background: -webkit-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: -o-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: -ms-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    background: linear-gradient(to bottom, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9fbfc', GradientType=0 );
-}
-
-#signupBtn{
-    margin-bottom: 75px;
-    left:200px;
-}

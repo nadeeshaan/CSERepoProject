@@ -1,5 +1,10 @@
 <?php
-echo 'Nadeeshaan';
+
+/*
+ * this file is responsible for uploading the documents to the server
+ */
+
+
 class Upload extends CI_Controller {
 
     public function __construct() {
@@ -12,6 +17,10 @@ class Upload extends CI_Controller {
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->model('upload_model');
+        //retrive the data from the database to be sent to the upload view
+        $this->load->model('sharedWithMe_model');
+        
+        $data['shared'] = $this->sharedWithMe_model->getShareDocs();
         $data['projects'] = $this->upload_model->getProjects();
         $this->currentProjects['projects'] = $data;
         $this->load->view('upload_view', $data);
@@ -19,10 +28,11 @@ class Upload extends CI_Controller {
 
     function uploadFiles() {
 
+        //this function is called when the upload button is pressed
         $this->load->model('upload_model');
 
         $currentUser = $this->session->userdata('indexNum');
-        $dirPath = 'C:\wamp\www\uploads\\';
+        $dirPath = 'C:\wamp\www\uploads\\';                 //set the base path
         $projName = $this->input->post("selectedText");
         $projDescription = $this->input->post('projDescription');
         $startDate = $this->input->post('startdate');
@@ -30,6 +40,7 @@ class Upload extends CI_Controller {
         $docDescription = $this->input->post('docDescription');
         $privilege = $this->input->post('privilege');
 
+        //get the privilege level assigned by the user
         if ($privilege === '1') {
             $priLevel = 1;
         } else if ($privilege === '2') {
@@ -53,16 +64,13 @@ class Upload extends CI_Controller {
         } else {
             $oldProject = true;
         }
-        
+        echo $oldProject;
         $projects = $this->upload_model->getProjects(); //get the project id of the document if the project already exists
 
             foreach ($projects as $prjs) {
                 if ($projName === $prjs->projname) {
                     $projId = $prjs->projid;
                     break 1;
-                }
-                else{
-                    $projId = $prjs->projid+1;
                 }
             }
 
@@ -76,7 +84,7 @@ class Upload extends CI_Controller {
                 'username' => $currentUser
             );
             
-            $this->upload_model->addNewProject($projectData);   //add new project and new document tables
+            $projId=$this->upload_model->addNewProject($projectData);   //add new project and new document tables            
         }
         
         $docData = array(                               //setting the document table's data

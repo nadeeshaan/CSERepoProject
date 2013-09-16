@@ -14,16 +14,20 @@
     <body>
         <div id='cssmenu'>
             <ul>
-                <li class='active'><a href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
-                <li class='has-sub'><a href='#'><span>Documents</span></a>
+                <li class='active'><a id="homeBtn" href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
+                <li class='has-sub'><a id="DocsMenu" href='#'><span>Documents</span></a>
                     <ul style="opacity: 0.9">
                         <li><a href='#'><span>Search Documents</span></a></li>
-                        <li><a href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
-                        <li><a href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
+                        <li><a id="docUpload" href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
+                        <li><a id="myUploads" href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
+                        <li><a id="sharedwithMe" href='<?php echo base_url(); ?>index.php/myShared'><span>Notifications(<?php
+                            echo count($shared);
+                        ?>)</span></a></li>
                     </ul>
                 </li>
-                <li class='last'><a href='#'><span>Profile</span></a></li>
-                <li class='last'><a href='<?php echo base_url(); ?>index.php/logout'>Logout</a></li>
+                <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
+                <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'>Logout</a></li>
+                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
 
@@ -31,6 +35,7 @@
             <span id="mainHeading">CSE Central Project Repository</span><br>
         </div>
         <div class="container">
+            <!-- Loads and view the images for the slide show-->
             <div id="slider" class="slider-wrapper">
                 <img src="<?php echo base_url(); ?>/images/pic1.jpg" alt=""/>
                 <img src="<?php echo base_url(); ?>/images/pic2.jpg" alt=""/>
@@ -42,6 +47,7 @@
                 <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
             </div>
         </div>
+        <!--Set the footer -->
         <div class="pageFooter">
             <span id="copyright">&#169 Copyright Nadeeshaan Gunasinghe</span><br>
             <span id="dept">Department of Computer Science and Engineering</span>

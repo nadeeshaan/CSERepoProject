@@ -4,6 +4,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/menu.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/welcomeMsg.css">
     </head>
+    
+    <title>LoginSuccess</title>
 
     <body>
             
@@ -20,8 +22,6 @@
                 </tr>
             </table>
             <img src="<?php echo base_url(); ?>/images/welcome.gif" class="resize">         
-            
-<!--            <input type="button" value="Login" class="sitenbutton" id="welcomeButton">-->
             <a href='<?php echo base_url(); ?>index.php/login'><button type="button" id="welcomeButton" class="sitenbutton">Login</button></a>
             
         </div>

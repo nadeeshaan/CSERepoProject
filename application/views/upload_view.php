@@ -11,6 +11,8 @@
         <script src="<?php echo base_url(); ?>/jScripts/jquery-ui.js"></script>
         <script src="<?php echo base_url(); ?>/jScripts/jquery.validate.min.js"></script>
         <script src="<?php echo base_url(); ?>/jScripts/uploadValidation.js"></script>
+        
+        <title>Upload</title>
 
         <script type="text/javascript">
             //This method is responsible for loading the selected option of the dropdown list to the text field 
@@ -39,16 +41,20 @@
 
         <div id='cssmenu'>
             <ul>
-                <li class='active'><a href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
-                <li class='has-sub'><a href='#'><span>Documents</span></a>
+                <li class='active'><a id="homeBtn" href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
+                <li class='has-sub'><a id="DocsMenu" href='#'><span>Documents</span></a>
                     <ul style="opacity: 0.9">
                         <li><a href='#'><span>Search Documents</span></a></li>
-                        <li><a href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
-                        <li><a href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
+                        <li><a id="docUpload" href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
+                        <li><a id="myUploads" href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
+                        <li><a id="sharedwithMe" href='<?php echo base_url(); ?>index.php/myShared'><span>Notifications(<?php
+                            echo count($shared);
+                        ?>)</span></a></li>
                     </ul>
                 </li>
-                <li class='last'><a href='#'><span>Profile</span></a></li>
-                <li class='last'><a href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
+                <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
+                <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
+                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
 
@@ -80,7 +86,7 @@
                                 }
                                 ?>
                             </select>
-                            <input id="selectedText" name="selectedText" style="width: 170px; margin-left: -199px; margin-top: 1px; border: none; float: left;"/><span id="project">*</span><br>
+                            <input id="selectedText" name="selectedText" style="width: 280px; margin-left: -300px; margin-top: 1px; border: none; float: left;"/><span id="project">*</span><br>
                         </td>
                     </tr>
                     <!--end of creating the editable drop down list-->
@@ -136,7 +142,7 @@
 
                     <tr>
                         <td>
-                            <br><input class="sitenbutton" type="submit" name="upload" value="Upload">
+                            <br><input id="uploadSubmit" class="sitenbutton" type="submit" name="upload" value="Upload">
                         </td>
                     </tr>
                 </table>

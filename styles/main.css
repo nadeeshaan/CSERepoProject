@@ -26,7 +26,6 @@ root {
 }
 
 .container{
-    /*    background: #FFFFFF;*/
     background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,0.33)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -114,7 +113,9 @@ root {
 .pageFooter{
     width: 900px;
     height:70px;
-    margin: auto;
+    margin:auto;
+    margin-top: -20px;
+    
     font-family: Arial;
     font-size: 15px;
     background: #d7d7f9;
@@ -151,7 +152,7 @@ root {
     font-weight: 300;
 }
 
-.sitenbutton {
+.sitebutton {
 
     -moz-box-shadow:inset 0px 0px 23px -13px #bee2f9;
     -webkit-box-shadow:inset 0px 0px 23px -13px #bee2f9;
@@ -195,5 +196,23 @@ root {
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee',GradientType=0);
 
     background-color:#468ccf;
+}
+
+.pageTitle{
+    height: 40px;
+    width: 900px;
+    margin: auto;
+    padding-top: 15px;
+    text-align: center;
+    font-family: Arial;
+    font-size: medium;
+    font-weight: 800;
+    background: -moz-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(38%, #d8e1e7), color-stop(53%, #b5c6d0), color-stop(100%, #f9fbfc));
+    background: -webkit-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #d8e1e7 38%, #b5c6d0 53%, #f9fbfc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9fbfc', GradientType=0 );
 }
 

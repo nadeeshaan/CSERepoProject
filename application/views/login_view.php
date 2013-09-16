@@ -3,9 +3,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/login.css">
         
-        <title>Project Repository Login</title>
-
-
+        <title>Login</title>
     </head>
 
     <body>
@@ -35,6 +33,7 @@
                             <td class="buttonrw"><input type="submit" value="Login" id="submit" class="logwinbutton"></td>
                             <td class="buttonrw"><a href='<?php echo base_url(); ?>index.php/signup'><button type="button" id="signup" class="logwinbutton">Sign Up</button></a></td>
                         </tr>
+                        <!-- Set the error message visible if the login is invalid -->
                         <tr><td colspan="2" class="error"><?php if (!is_null($msg)) echo $msg; ?></td></tr>
                     </table>
                     
