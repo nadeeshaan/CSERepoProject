@@ -61,7 +61,7 @@
         <div class="pageTitle">View And Edit Your Profile</div>
 
         <div id="myProfileContainer">
-            <form>
+            <form form id="profileUpdate" method="post" name="profileUpdate" class="upload" action="<?php echo base_url(); ?>index.php/myprofile/updateProfile" enctype="multipart/form-data">
                 <table id="myProfileTbl">
                     <tr>
                         <td>
@@ -93,8 +93,8 @@
                                 '<li>Edit
                                     <ul>
                                         <li>
-                                            <input type="text" value="' . $profileData['firstname'] . '">
-                                            <input type="text" value="' . $profileData['lastname'] . '">
+                                            <input id="firstname" name="firstname" type="text" value="' . $profileData['firstname'] . '">
+                                            <input id="lastname" name="lastname" type="text" value="' . $profileData['lastname'] . '">
                                         </li>
                                     </ul>
                                 <li>';
@@ -112,7 +112,7 @@
                     <tr>
                         <td>
                             <span>About Me</span><br>
-                            <textarea rows="4" cols="30"><?php echo $profileData['aboutme'] ?></textarea>
+                            <textarea id="aboutme" name="aboutme" rows="4" cols="30"><?php echo $profileData['aboutme'] ?></textarea>
                         </td>
                     </tr>
 
@@ -127,17 +127,17 @@
                             <span>Contact Information</span>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
-                            <span>E-Mail: <?php echo $profileData['email'];?></span>
+                            <span>E-Mail: <?php echo $profileData['email']; ?></span>
                             <ul class="expList">
                                 <?php
                                 echo
                                 '<li>Edit
                                     <ul>
                                         <li>
-                                            <input type="email" value="' . $profileData['email'] . '">
+                                            <input id="email" name="email" type="email" value="' . $profileData['email'] . '">
                                         </li>
                                     </ul>
                                 <li>';
@@ -145,17 +145,17 @@
                             </ul>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
-                            <span>Mobile: <?php echo $profileData['mobile'];?></span>
+                            <span>Mobile: <?php echo $profileData['mobile']; ?></span>
                             <ul class="expList">
                                 <?php
                                 echo
                                 '<li>Edit
                                     <ul>
                                         <li>
-                                            <input type="text" value="' . $profileData['mobile'] . '">
+                                            <input id="mobile" name="mobile" type="text" value="' . $profileData['mobile'] . '">
                                         </li>
                                     </ul>
                                 <li>';
@@ -167,8 +167,9 @@
                 <div>
                     <input type="submit" id="myProfBtn" class="sitebutton" value="Done Edit">
                 </div>
-                
+
             </form>
+
         </div>
 
         <div class="pageFooter">

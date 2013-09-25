@@ -4,7 +4,7 @@
 // */
 //
 $(function() {
-    $("#birthday").datepicker();
+    $("#birthday").datepicker({ dateFormat: "yy-mm-dd" });
 });
 
 $(document).ready(function() {

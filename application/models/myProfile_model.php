@@ -33,6 +33,14 @@ class MyProfile_Model extends CI_Model {
         }
     }
 
+    function updateData($info) {
+        $this->load->database();
+        $currentUser = $this->session->userdata('indexNum');
+        
+        $this->db->where('username',$currentUser);
+        $this->db->update('profile',$info);
+    }
+
 }
 
 ?>

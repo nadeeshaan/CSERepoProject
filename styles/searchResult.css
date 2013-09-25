@@ -1,0 +1,88 @@
+/* 
+    Document   : seearchResult
+    Created on : Sep 23, 2013, 1:46:08 PM
+    Author     : Griffindor
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#searchDocContainer{
+    font-family: Arial;
+
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,0.33)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d4e4ef', endColorstr='#86aecc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    width: 900px;
+    min-height: 700px;
+    height: auto;
+    margin: auto;
+}
+
+td{
+    padding: 10px 10px 10px 60px;
+}
+
+tr{
+    text-align: left;
+}
+
+input[type=text],[type=password],[type=email]{
+    margin-left: 30px;
+    height: 25px;
+    width: 200px;
+    font-family: arial, verdana, serif;
+    font-size: 12px;
+    color: #333333;
+    vertical-align: middle;
+    padding-left: 2px;  
+    text-shadow: 0px 1px 0px #fff;  
+    -webkit-box-shadow: 0px 0px 10px #81ddf8;  
+    -moz-box-shadow: 0px 0px 10px #81ddf8;  
+    box-shadow: 0px 0px 10px #81ddf8;
+    outline: none;  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;  
+    border: 3px solid #fafafa; 
+    -webkit-transition: .3s ease-in-out;  
+    -moz-transition: .3s ease-in-out;
+}
+
+textArea{
+    width: 600px;
+    height: 200px;
+    font-family: arial, verdana, serif;
+    font-size: 12px;
+    color: #333333;
+    text-shadow: 0px 1px 0px #fff;  
+    -webkit-box-shadow: 0px 0px 6px #81ddf8;  
+    -moz-box-shadow: 0px 0px 8px #81ddf8;  
+    box-shadow: 0px 0px 5px #81ddf8;
+    outline: none;  
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;  
+    border-radius: 3px;  
+    border: 3px solid #fafafa; 
+    -webkit-transition: .3s ease-in-out;  
+    -moz-transition: .3s ease-in-out;
+}
+
+#docRslt{
+    padding-top: 40px
+}
+
+#rsltBtn{
+    margin-bottom: 100px;
+}
+
+.rsltTxtArea{
+    max-width: 600px;
+    max-height: 300px;
+    min-width: 500px;
+    min-height: 250px;
+}

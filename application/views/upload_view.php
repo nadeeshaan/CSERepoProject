@@ -135,7 +135,7 @@
                             <br><select id="privilege" name="privilege">
                                 <option value='0'>Choose..</option>
                                 <option value='1'>View & Download</option>
-                                <option value='2'>View Only</option>
+                                <option value='2'>Hidden</option>
                             </select><span id="privilegeText">*</span>
                         </td>
                     </tr>
