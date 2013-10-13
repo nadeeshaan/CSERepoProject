@@ -34,9 +34,9 @@
                 })
             });
         </script>
-        
+
         <title>MyUploads</title>
-        
+
     </head>
 
     <body>
@@ -45,31 +45,30 @@
                 <li class='active'><a id="homeBtn" href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
                 <li class='has-sub'><a id="DocsMenu" href='#'><span>Documents</span></a>
                     <ul style="opacity: 0.9">
-                        <li><a href='#'><span>Search Documents</span></a></li>
+                        <li><a href='<?php echo base_url(); ?>index.php/search'><span>Search Documents</span></a></li>
                         <li><a id="docUpload" href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
                         <li><a id="myUploads" href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
                         <li><a id="sharedwithMe" href='<?php echo base_url(); ?>index.php/myShared'><span>Notifications(<?php
-                            echo count($shared);
-                        ?>)</span></a></li>
+                                    echo count($shared);
+                                    ?>)</span></a></li>
                     </ul>
                 </li>
+                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
                 <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
                 <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
-                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
         <div class="pageHeader">
-            <span id="mainHeading">CSE Central Project Repository</span><br>
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png" class="resize">
         </div>
-        <div class="container">
-            <div id="projectContainer" style="position: absolute">
-                <form>
-                    <table>
-                        <ul id="expList">
+
+        <div id="projectContainer">
+            <ul id="expList">
+                <div id="test">
                             <?php
                             foreach ($myprojects as $prjs) {
                                     echo
-                                    '<li>' . $prjs->projname .
+                                    '<li id=mainLi>' . $prjs->projname .
                                     '<ul>
                                         <li>See more
                                                 <ul>
@@ -86,20 +85,19 @@
                                             '<div id=filename>' .
                                             $doc->filename .
                                             '</div>
-                                             <a href="/uploads/' . $doc->username . '/projects/' . $prjs->projname . '/' . $doc->filename . '" target="_blank">Download</a>';
+                                             <a href="/uploads/' . $doc->username . '/projects/' . $prjs->projname . '/' . $doc->filename . '" target="_blank" id="linkText">Download</a>
+                                             <a href="'.base_url().'index.php/docComments/showDocComments?id='.$doc->docid.'" target="_blank" id="linkText">Comments</a>';
                                         }
                                     }
                                     echo
                                     '</li>
                                    </ul>
-                               </li><hr>';
+                               </li><hr id="seperator">';
                             }
                             ?>
+                    </div>
                         </ul>
-                    </table>
-                </form>
-                
-            </div>
+
         </div>
         <div class="pageFooter">
             <span id="copyright">&#169 Copyright Nadeeshaan Gunasinghe</span><br>

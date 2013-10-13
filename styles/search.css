@@ -8,13 +8,14 @@
 #searchContainer{
     font-family: Arial;
 
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%, rgba(134,174,204,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(212,228,239,0.33)), color-stop(100%,rgba(134,174,204,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(212,228,239,0.33) 0%,rgba(134,174,204,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54d4e4ef', endColorstr='#86aecc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #ffffff;
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%,color-stop(0%, #ffffff), color-stop(25%, #ffffff), color-stop(78%, #f0f0f0), color-stop(100%, #f0f0f0));
+    background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
+    background: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
+    background: radial-gradient(ellipse at center, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0', GradientType=1 );
 
     width: 900px;
     min-height: 700px;
@@ -26,15 +27,21 @@
     padding-top: 20px;
     font-family: Arial;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 900;
 }
 
 #docsCell{
-    padding: 10px 10px 10px 60px;
+    padding: 40px 10px 10px 150px;
 }
 
 #docs{
     text-align: left;
+    font-weight: bold;
+}
+
+#prjs{
+    text-align: left;
+    font-weight: bold;
 }
 
 #std{
@@ -47,7 +54,14 @@
 
 
 #searchHeader{
-    background-color:#c3dfef;
+    background: #e3dfd4;
+    background: -moz-linear-gradient(top, #e3dfd4 0%, #e3dfd4 16%, #bdb39a 50%, #e3dfd4 79%, #e3dfd4 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #e3dfd4), color-stop(16%, #e3dfd4), color-stop(50%, #bdb39a), color-stop(79%, #e3dfd4), color-stop(100%, #e3dfd4));
+    background: -webkit-linear-gradient(top, #e3dfd4 0%, #e3dfd4 16%, #bdb39a 50%, #e3dfd4 79%, #e3dfd4 100%);
+    background: -o-linear-gradient(top, #e3dfd4 0%, #e3dfd4 16%, #bdb39a 50%, #e3dfd4 79%, #e3dfd4 100%);
+    background: -ms-linear-gradient(top, #e3dfd4 0%, #e3dfd4 16%, #bdb39a 50%, #e3dfd4 79%, #e3dfd4 100%);
+    background: linear-gradient(to bottom, #e3dfd4 0%, #e3dfd4 16%, #bdb39a 50%, #e3dfd4 79%, #e3dfd4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3dfd4', endColorstr='#e3dfd4', GradientType=0 );
     width: 100%;
 }
 
@@ -90,4 +104,12 @@
 }
 .searchbutton{
     clear:both;
+}
+
+#searchLink{
+    text-decoration: none;
+}
+
+hr{
+    width: 600px;
 }

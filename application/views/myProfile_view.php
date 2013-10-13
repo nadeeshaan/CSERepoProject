@@ -41,7 +41,7 @@
                 <li class='active'><a id="homeBtn" href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
                 <li class='has-sub'><a id="DocsMenu" href='#'><span>Documents</span></a>
                     <ul style="opacity: 0.9">
-                        <li><a href='#'><span>Search Documents</span></a></li>
+                        <li><a href='<?php echo base_url(); ?>index.php/search'><span>Search Documents</span></a></li>
                         <li><a id="docUpload" href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
                         <li><a id="myUploads" href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
                         <li><a id="sharedwithMe" href='<?php echo base_url(); ?>index.php/myShared'><span>Notifications(<?php
@@ -49,14 +49,15 @@
                                     ?>)</span></a></li>
                     </ul>
                 </li>
+                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
                 <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
                 <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'>Logout</a></li>
-                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
 
         <div class="pageHeader">
-            <span id="mainHeading">CSE Central Project Repository</span><br>
+            <!--<span id="mainHeading">CSE Central Project Repository</span><br>-->
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png" class="resize">
         </div>
         <div class="pageTitle">View And Edit Your Profile</div>
 

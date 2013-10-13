@@ -19,7 +19,7 @@
         
         function getDocuments(){
             $currentUser = $this->session->userdata('indexNum');
-            $query=  $this->db->query("SELECT filename,path,description,privilege,projid,username FROM document WHERE username='$currentUser'");
+            $query=  $this->db->query("SELECT filename,path,description,privilege,projid,username,docid FROM document WHERE username='$currentUser'");
             return $query->result();
         }
     }

@@ -21,7 +21,7 @@
 
     <body>
         <div class="pageHeader">
-            <span id="mainHeading">CSE Central Project Repository</span><br>
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png" class="resize">
         </div>
 
         <div class="pageTitle">Create Your Account in CSE Project Repository</div>
@@ -32,48 +32,48 @@
                 
                 <table id="signUpTbl">
                     <tr>
-                        <td><label for="firstname">First Name</label></td>
-                        <td><input type="text" id="firstname" name="firstname"><span id="fName">*</span><br></td>
+                        <td><label for="firstname">First Name*</label></td>
+                        <td><input type="text" id="firstname" name="firstname"><br><span id="fName"></span><br></td>
 
-                        <td><label for="lastname">Last Name</label></td>
-                        <td><input type="text" id="lastname" name="lastname"><span id="lName">*</span><br></td>
+                        <td><label for="lastname">Last Name*</label></td>
+                        <td><input type="text" id="lastname" name="lastname"><br><span id="lName"></span><br></td>
                     </tr>
 
                     <tr>
-                        <td><label for="username">Index Number</label></td>
-                        <td><input type="text" id="username" name="username"><span id="iNum">*</span><br></td>
+                        <td><label for="username">Index Number*</label></td>
+                        <td><input type="text" id="username" name="username"><br><span id="iNum"></span><br></td>
                     </tr>
 
                     <tr>
-                        <td><label for="password">Password</label></td>
-                        <td><input type="password" id="password" name="password"><span id="pswd">*</span><br></td>
+                        <td><label for="password">Password*</label></td>
+                        <td><input type="password" id="password" name="password"><br><span id="pswd"></span><br></td>
 
-                        <td><label for="confirmPword">Confirm Password</label></td>
-                        <td><input type="password" id="confirmPword" name="confirmPword"><span id="cnpswd"></span><br></td>
+                        <td><label for="confirmPword">Confirm Password*</label></td>
+                        <td><input type="password" id="confirmPword" name="confirmPword"><br><span id="cnpswd"></span><br></td>
                     </tr>
 
                     <tr>
-                        <td><label for="email">E-mail</label></td>
-                        <td><input type="email" id="email" name="email"><span id="eml">*</span><br></td>
+                        <td><label for="email">E-mail*</label></td>
+                        <td><input type="email" id="email" name="email"><br><span id="eml"></span><br></td>
 
                         <td><label for="mobile">Mobile Number</label></td>
-                        <td><input type="text" id="mobile" name="mobile"><span id="mob"></span><br></td>
+                        <td><input type="text" id="mobile" name="mobile"><br><span id="mob"></span><br></td>
                     </tr>
 
                     <tr>
-                        <td><label for="gender">Gender</label></td>
+                        <td><label for="gender">Gender*</label></td>
                         <td colspan="2">
                             <select id="gender" name="gender"> 
                                 <option value= '0'> Choose..</option> 
                                 <option value='Male'>Male</option> 
                                 <option value='Female'>Female</option> 
-                            </select><span id="gndr">*</span><br>
+                            </select><br><span id="gndr"></span><br>
                         </td>
                     </tr>
 
                     <tr>
-                        <td><label for="birthday">Birth Day</label></td>
-                        <td colspan="2"><input type="text" name="birthday" id="birthday" placeholder="Birth Day" /><span id="bday">*</span><br></td>
+                        <td><label for="birthday">Birth Day*</label></td>
+                        <td colspan="2"><input type="text" name="birthday" id="birthday" placeholder="Birth Day" /><br><span id="bday"></span><br></td>
                     </tr>
                     
                     <tr>

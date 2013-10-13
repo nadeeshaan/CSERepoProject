@@ -4,26 +4,16 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/menu.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/welcomeMsg.css">
     </head>
-    
+
     <title>LoginSuccess</title>
 
     <body>
-            
+        <div class="pageHeader">
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png">
+        </div>
         <div class="welcomeContainer">
-            <table id='heading' class="welcomeMessage">
-                <tr>
-                    <td>Welcome</td>
-                </tr>
-                <tr>
-                    <td>to</td>
-                </tr>
-                <tr>
-                    <td>CSE Central Project Repository</td>
-                </tr>
-            </table>
-            <img src="<?php echo base_url(); ?>/images/welcome.gif" class="resize">         
-            <a href='<?php echo base_url(); ?>index.php/login'><button type="button" id="welcomeButton" class="sitenbutton">Login</button></a>
-            
+            <a href='<?php echo base_url(); ?>index.php/login'><button type="button" id="welcomeButton" class="siteButton">Login</button></a>
+
         </div>
 
         <div class="pageFooter">

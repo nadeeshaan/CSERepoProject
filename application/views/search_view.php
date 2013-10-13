@@ -11,22 +11,22 @@
                 <li class='active'><a id="homeBtn" href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
                 <li class='has-sub'><a id="DocsMenu" href='#'><span>Documents</span></a>
                     <ul style="opacity: 0.9">
-                        <li><a href='#'><span>Search Documents</span></a></li>
+                        <li><a href='<?php echo base_url(); ?>index.php/search'><span>Search Documents</span></a></li>
                         <li><a id="docUpload" href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
                         <li><a id="myUploads" href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
                         <li><a id="sharedwithMe" href='<?php echo base_url(); ?>index.php/myShared'><span>Notifications(<?php
-                                    echo count($shared);
+                                    echo $sharedCount;
                                     ?>)</span></a></li>
                     </ul>
                 </li>
+                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
                 <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
                 <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
-                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
 
         <div class="pageHeader">
-            <span id="mainHeading">CSE Central Project Repository</span><br>
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png" class="resize">
         </div>
 
         <div id="searchContainer">
@@ -35,10 +35,10 @@
 
                     <tr id="str">
                         <td id="std">
-                            <input id="projectSearch" type="radio" name="select"><span>Projects</span>
+                            <input id="projectSearch" type="radio" name="select" value="projectSearch"><span>Projects</span>
                         </td>
                         <td id="std">
-                            <input id="documentSearch" type="radio" name="select"><span>Documents</span>
+                            <input id="documentSearch" type="radio" name="select" value="documentSearch" checked="TRUE"><span>Documents</span>
                         </td>
                     </tr>
                     <tr id="str">
@@ -50,20 +50,33 @@
 
                 <table id="searcResultTbl">
                     <?php
-                    if(count($docResults)>0){
-                        foreach($docResults as $doc){
-                            
-                            echo '<tr id="docs">
-                                    <td id="docsCell">'.
-                                        '<a href="'.base_url().'index.php/showSearchResult/getDocumentData?id='.$doc->docid.'" target="_blank">'.$doc->filename.'</a>'
-                                    .'<td>
-                                  <tr>';
+                    if ($selectedButton === 'document') {
+                        if (count($results) > 0) {
+                            foreach ($results as $doc) {
+
+                                echo '<tr id="docs">
+                                        <td id="docsCell">' .
+                                '<span>'.$doc->filename .'</span><br><a href="' . base_url() . 'index.php/showSearchResult/getDocumentData?id=' . $doc->docid . '" target="_blank" id="searchLink">Explore More</a><hr>'
+                                . '<td>
+                                      <tr>';
+                            }
+                        } else {
+                            echo 'No items found';
+                        }
+                    } else if ($selectedButton === 'project') {
+                        if (count($results) > 0) {
+                            foreach ($results as $proj) {
+
+                                echo '<tr id="prjs">
+                                        <td id="docsCell">' .
+                                '<span>'.$proj->projname .'</span><br><a href="' . base_url() . 'index.php/showSearchResult/getProjectData?id=' . $proj->projid . '" target="_blank" id="searchLink">Explore More</a><hr>'
+                                . '<td>
+                                      <tr>';
+                            }
+                        } else {
+                            echo 'No items found';
                         }
                     }
-                    else{
-                        echo 'No items found';
-                    }
-                        
                     ?>
                 </table>
             </form>

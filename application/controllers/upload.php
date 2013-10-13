@@ -4,7 +4,6 @@
  * this file is responsible for uploading the documents to the server
  */
 
-
 class Upload extends CI_Controller {
 
     public function __construct() {
@@ -19,7 +18,7 @@ class Upload extends CI_Controller {
         $this->load->model('upload_model');
         //retrive the data from the database to be sent to the upload view
         $this->load->model('sharedWithMe_model');
-        
+
         $data['shared'] = $this->sharedWithMe_model->getShareDocs();
         $data['projects'] = $this->upload_model->getProjects();
         $this->currentProjects['projects'] = $data;
@@ -67,12 +66,12 @@ class Upload extends CI_Controller {
         echo $oldProject;
         $projects = $this->upload_model->getProjects(); //get the project id of the document if the project already exists
 
-            foreach ($projects as $prjs) {
-                if ($projName === $prjs->projname) {
-                    $projId = $prjs->projid;
-                    break 1;
-                }
+        foreach ($projects as $prjs) {
+            if ($projName === $prjs->projname) {
+                $projId = $prjs->projid;
+                break 1;
             }
+        }
 
         $this->upload->do_upload('document');           //Upload the file to the relevent Directory
 
@@ -83,12 +82,13 @@ class Upload extends CI_Controller {
                 'startdate' => $startDate,
                 'username' => $currentUser
             );
-            
-            $projId=$this->upload_model->addNewProject($projectData);   //add new project and new document tables            
+
+            $projId = $this->upload_model->addNewProject($projectData);   //add new project and new document tables            
         }
-        
-        $docData = array(                               //setting the document table's data
+
+        $docData = array(//setting the document table's data
             'filename' => $fileName,
+            'docname' => current(explode(".", $fileName)),
             'path' => $filePath,
             'filetype' => ( $_FILES['document']['type']),
             'filesize' => ( $_FILES['document']['size']),
@@ -97,9 +97,9 @@ class Upload extends CI_Controller {
             'projid' => $projId,
             'privilege' => $priLevel
         );
-        
-            $this->upload_model->addNewDocument($docData);      //add new document to the document table
-            redirect('home/load_home_view');
+
+        $this->upload_model->addNewDocument($docData);      //add new document to the document table
+        redirect('home/load_home_view');
     }
 
 }

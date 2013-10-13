@@ -13,10 +13,11 @@ class Signup extends CI_Controller {
 
     function insertData() {
         $this->load->model('signup_model');
+        $this->load->library('encrypt');
 
         $dirPath = 'C:\wamp\www\uploads\\';  //set the base directory
         $username = $this->input->post('username');
-        $password = $this->input->post('password');
+        $password = $this->encrypt->encode($this->input->post('password'));
 
         $firstname = $this->input->post('firstname');
         $lastname = $this->input->post('lastname');
@@ -72,7 +73,7 @@ class Signup extends CI_Controller {
         //uploads the user profile picture to the server
         $this->upload->do_upload('picture');
         $this->signup_model->updateUser($data1, $data2);
-        redirect('home/load_home_view');
+        redirect('login_success');
     }
 
     //check the confirmation password is valid

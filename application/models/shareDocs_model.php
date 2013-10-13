@@ -39,6 +39,14 @@ class ShareDocs_Model extends CI_Controller {
     function shareDoc($data){
         $this->db->insert('user_document',$data);
     }
+    
+    function getShareDocs() {
+        $this->load->database();
+        $currentUser = $this->session->userdata('indexNum');
+        $query = $this->db->query("SELECT user_document.docid AS docid,user_document.notified AS notif,document.filename AS fname,document.username AS username,document.description AS des FROM user_document,document WHERE user_document.docid=document.docid AND user_document.username='$currentUser' AND user_document.notified=1");
+
+        return $query->result();
+    }
 
 }
 

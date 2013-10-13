@@ -1,0 +1,39 @@
+/* 
+    Document   : showSearchProjectResult
+    Created on : Oct 10, 2013, 12:42:19 AM
+    Author     : Griffindor
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#outer{
+    width: 650px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 4px solid #000000;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background: #ffffff;
+    padding: 10px 10px 10px 60px;
+}
+
+#test{
+    padding-left: 75px;
+}
+
+hr{
+    width: 600px;
+    margin-top: 35px;
+    margin-left: 75px;
+    margin-bottom: 25px;
+    alignment-adjust: middle;
+}
+
+#description{
+    margin-left: 100px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+

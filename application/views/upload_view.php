@@ -44,7 +44,7 @@
                 <li class='active'><a id="homeBtn" href="<?php echo base_url(); ?>index.php/home/load_home_view"><span>Home</span></a></li>
                 <li class='has-sub'><a id="DocsMenu" href='#'><span>Documents</span></a>
                     <ul style="opacity: 0.9">
-                        <li><a href='#'><span>Search Documents</span></a></li>
+                        <li><a href='<?php echo base_url(); ?>index.php/search'><span>Search Documents</span></a></li>
                         <li><a id="docUpload" href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
                         <li><a id="myUploads" href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
                         <li><a id="sharedwithMe" href='<?php echo base_url(); ?>index.php/myShared'><span>Notifications(<?php
@@ -52,14 +52,14 @@
                         ?>)</span></a></li>
                     </ul>
                 </li>
+                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
                 <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
                 <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'><span>Logout</span></a></li>
-                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
 
         <div class="pageHeader">
-            <span id="mainHeading">CSE Central Project Repository</span><br>
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png" class="resize">
         </div>
 
         <div id="uploadHeading">Create Your Account in CSE Project Repository</div>
@@ -72,7 +72,7 @@
 
                     <tr>
                         <td>
-                            <label for="newProject">Project Name</label><br>
+                            <label for="newProject">Project Name*</label><br>
                         </td>
                         <td>
                             <!--Create a editable drop down list for choosing projects
@@ -86,7 +86,7 @@
                                 }
                                 ?>
                             </select>
-                            <input id="selectedText" name="selectedText" style="width: 280px; margin-left: -300px; margin-top: 1px; border: none; float: left;"/><span id="project">*</span><br>
+                            <input id="selectedText" name="selectedText" style="width: 280px; margin-left: -300px; margin-top: 1px; border: none; float: left;"/><br><span id="project"></span><br>
                         </td>
                     </tr>
                     <!--end of creating the editable drop down list-->
@@ -102,47 +102,47 @@
 
                     <tr>
                         <td>
-                            <label for="startdate">Start Date</label>
+                            <label for="startdate">Start Date*</label>
                         </td>
                         <td>
-                            <input type="text" name="startdate" id="startdate" placeholder="Start Date" /><span id="strtDate"></span><br>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label for="document">Choose File</label><br>
-                        </td>
-                        <td>
-                            <br><input id="document" name="document" type="file"/><span id="selectedFile">*</span><br>
+                            <input type="text" name="startdate" id="startdate" placeholder="Start Date" /><br><span id="strtDate"></span><br>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label for="docDescription">Document Description</label>
+                            <label for="document">Choose File*</label><br>
                         </td>
                         <td>
-                            <br><textarea name="docDescription" rows="3" cols="25" id="docDescription"></textarea><span id="desText">*</span><br>
+                            <br><input id="document" name="document" type="file"/><br><span id="selectedFile"></span><br>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <br><label for="privilege">Privilege</label><br>
+                            <label for="docDescription">Document Description*</label>
+                        </td>
+                        <td>
+                            <br><textarea name="docDescription" rows="3" cols="25" id="docDescription"></textarea><br><span id="desText"></span><br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <br><label for="privilege">Privilege*</label><br>
                         </td>
                         <td>
                             <br><select id="privilege" name="privilege">
                                 <option value='0'>Choose..</option>
                                 <option value='1'>View & Download</option>
                                 <option value='2'>Hidden</option>
-                            </select><span id="privilegeText">*</span>
+                            </select><br><span id="privilegeText"></span>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <br><input id="uploadSubmit" class="sitenbutton" type="submit" name="upload" value="Upload">
+                            <br><input id="uploadSubmit" class="sitebutton" type="submit" name="upload" value="Upload">
                         </td>
                     </tr>
                 </table>

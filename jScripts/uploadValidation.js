@@ -60,6 +60,7 @@ $(document).ready(function() {
                 return false;
             }
             else {
+                spn.addClass("error");
                 spn.text(field.attr("name") + " Field cannot be empty");
                 return true;
             }
@@ -74,6 +75,7 @@ $(document).ready(function() {
     //privilege level
     function privilegeTest() {
         if (privilege.val() === '0') {
+            privilegeText.addClass("error");
             privilegeText.text('Privilege level cannot be empty');
             return true;
         }

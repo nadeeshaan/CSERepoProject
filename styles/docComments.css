@@ -1,6 +1,12 @@
-#projectContainer{
-    font-family: Arial;
+/* 
+    Document   : docComments
+    Created on : Sep 27, 2013, 8:16:02 PM
+    Author     : Griffindor
+    Description:
+        Purpose of the stylesheet follows.
+*/
 
+#docCommentContainer{
     background: #ffffff;
     background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%,color-stop(0%, #ffffff), color-stop(25%, #ffffff), color-stop(78%, #f0f0f0), color-stop(100%, #f0f0f0));
@@ -9,57 +15,13 @@
     background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
     background: radial-gradient(ellipse at center, #ffffff 0%, #ffffff 25%, #f0f0f0 78%, #f0f0f0 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0', GradientType=1 );
-    
+
     width: 900px;
     min-height: 700px;
-    margin: auto;
-    overflow: auto;
-
-}
-#filename{
-    margin-top: 10px;
-}
-#expList ul, li {
-    list-style: none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
-}
-#expList p {
-    margin:0;
-    display:block;
-}
-#expList p:hover {
-    background-color:#121212;
-}
-#expList li {
-    line-height:150%;
-    text-indent: 20px;
-    background-position: 1px 6px;
-    padding-left: 20px;
-    background-repeat: no-repeat;
-}
-#expList{
-    /*padding-top: 25px;*/
-    margin: auto;
+    margin: auto; 
 }
 
-/* Collapsed state for list element */
-#expList .collapsed {
-    background-image: url(../images/ArrowDown.png);
-}
-/* Expanded state for list element
-/* NOTE: This class must be located UNDER the collapsed one */
-#expList .expanded {
-    background-image: url(../images/ArrowUp.png);
-}
-
-#mainLi{
-    font-weight: 500;
-    width:675px;
-    margin-left: 60px;
-    min-height: 50px;
-    height: auto;
+td{
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
     -webkit-border-radius: 10px 10px 10px 10px;
@@ -68,20 +30,22 @@
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     background: #ffffff;
+    padding: 10px 10px 10px 60px;
 }
 
-#seperator{
-    margin-bottom: 25px;
-    margin-top: 30px;
-    margin-left: 135px;
-    margin-right: 150px;
-}
-#test{
-    margin-top: 50px;
-    margin-bottom: 100px
+tr{
+
+    text-align: left;
 }
 
-#linkText{
-    text-decoration: none;
-    margin-left: 20px;
+#commentTable{
+    border-collapse:separate;
+    border-spacing:25px;
+    padding-top: 40px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#wrap{
+
 }

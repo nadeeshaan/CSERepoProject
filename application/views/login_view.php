@@ -3,18 +3,22 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/main.css">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/login.css">
         
+        <script type="text/javascript" src="<?php echo base_url(); ?>/jScripts/jquery-1.9.1.js"></script>
+        <script src="<?php echo base_url(); ?>/jScripts/jquery-ui.js"></script>
+        <script src="<?php echo base_url(); ?>/jScripts/jquery.validate.min.js"></script>
+        <!--<script src="<?php echo base_url(); ?>/jScripts/loginValidation.js"></script>-->
+
         <title>Login</title>
     </head>
 
     <body>
         <div class="pageHeader">
-            <span id="mainHeading">CSE Central Project Repository</span><br>
+<!--            <span id="mainHeading">CSE Central Project Repository</span><br>-->
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png" class="resize">
         </div>
-
+        
+        <div class="pageTitle" style="font-size: 24;">Login</div>
         <section class="loginContainer">
-            <div id="login">
-                Login
-            </div>
             <div class="loginBody">
                 <form id="loginForm" method="post" name="loginForm" class="login" action="<?php echo base_url(); ?>index.php/login/formSubmit">
                     <table id="loginTable">
@@ -35,8 +39,9 @@
                         </tr>
                         <!-- Set the error message visible if the login is invalid -->
                         <tr><td colspan="2" class="error"><?php if (!is_null($msg)) echo $msg; ?></td></tr>
+<!--                        <tr><td colspan="2" id="loginError"></td></tr>-->
                     </table>
-                    
+
                 </form>
             </div>
         </section>

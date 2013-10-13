@@ -13,22 +13,27 @@ class Search extends CI_Controller {
 
     public function index() {
         $this->load->helper('url');
-        $data['docResults']=NULL;
-        $this->load->view('search_view',$data);
+        $data['docResults'] = NULL;
+        $data['selectedButton'] = NULL;
+        $this->load->model('sharedWithMe_model');
+        $data['sharedCount'] = count($this->sharedWithMe_model->getShareDocs());
+        $this->load->view('search_view', $data);
     }
 
     public function createTokens() {
         $this->load->helper('url');
+        $this->load->model('sharedWithMe_model');
+
         $invalid = array(" is ", " the ", " or ", " am ", " are ", ",", ".");
-        
+
         $twowords = array();
         $twowords2 = array();
         $threeWords = array();
         $threeWords2 = array();
         $fourWords = array();
         $fourWords2 = array();
-        
-        
+
+
         $searchText = $this->input->post('SearchFld');
 
         $replacedStr = str_replace($invalid, " ", $searchText);
@@ -62,10 +67,19 @@ class Search extends CI_Controller {
         }
 
         $this->load->model('search_model');
-//        print_r($twowords);
-//        print_r($this->search_model->getDocuments($twowords, $twowords2, $threeWords, $threeWords));
-        $data['docResults']=$this->search_model->getDocuments($twowords, $twowords2, $threeWords, $threeWords);
-        $this->load->view('search_view',$data);
+
+        if (($_POST['select']) === 'documentSearch') {
+            $data['results'] = $this->search_model->getDocuments($twowords, $twowords2, $threeWords, $threeWords2);
+            $data['selectedButton'] = 'document';
+            $this->load->view('search_view', $data);
+        } else if (($_POST['select']) === 'projectSearch') {
+            $data['results'] = $this->search_model->getProjects($twowords, $twowords2, $threeWords, $threeWords2);
+            $data['selectedButton'] = 'project';
+//            print_r($selected);
+            $data['sharedCount'] = count($this->sharedWithMe_model->getShareDocs());
+
+            $this->load->view('search_view', $data);
+        }
     }
 
 }

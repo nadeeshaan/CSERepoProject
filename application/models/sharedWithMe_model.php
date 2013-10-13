@@ -26,19 +26,24 @@ class SharedWithMe_Model extends CI_Model {
         return $query->result_array();
     }
 
-    function updateTable() {
+    function updateTable($decision, $docid) {
         $this->load->database();
         $shr = $this->getNotiDocIds();
         $myDataArr = array();
-        if (is_array($shr)) {
-            foreach ($shr as $shr) {
-                $myDataArr[] = array(
-                    'docid' => $shr['docid'],
-                    'notified' => 0,
-                );
+
+        foreach ($shr as $shr) {
+            
+            if ($decision == 1 && $docid == $shr['docid']) {
+                $this->db->where('docid', $shr['docid']);
+                $fields = array('notified' => 0);
+                $this->db->update('user_document', $fields);
+            } 
+            
+            else if ($decision == 0 && $docid == $shr['docid']) {
+                $this->load->database();
+                $this->db->delete('user_document', array('docid' => $shr['docid']));
             }
         }
-        $this->db->update_batch('user_document', $myDataArr, 'docid');
     }
 
 }

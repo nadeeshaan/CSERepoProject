@@ -18,9 +18,11 @@ class MyShared extends CI_Controller{
     }
     
     public function changeNotified(){
+        $decision=$_GET["decision"];
+        $docid=$_GET["docid"];
         $this->load->model('sharedWithMe_model');        
-        $this->sharedWithMe_model->updateTable();
-        redirect('home/load_home_view');
+        $this->sharedWithMe_model->updateTable($decision,$docid);
+//        redirect('home/load_home_view');
     }
 }
 ?>

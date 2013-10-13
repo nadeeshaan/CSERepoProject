@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/styles/nivo-slider.css" media="screen">        
         <script src="<?php echo base_url(); ?>/jScripts/jquery-1.9.1.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>/jScripts/jquery.nivo.slider.pack.js" type="text/javascript"></script>
-        
+
         <title>Welcome:Home</title>
 
     </head>
@@ -21,18 +21,18 @@
                         <li><a id="docUpload" href="<?php echo base_url(); ?>index.php/upload"><span>Upload Documents</span></a></li>
                         <li><a id="myUploads" href='<?php echo base_url(); ?>index.php/my_uploads'><span>My Uploads</span></a></li>
                         <li><a id="sharedwithMe" href='<?php echo base_url(); ?>index.php/myShared'><span>Notifications(<?php
-                            echo count($shared);
-                        ?>)</span></a></li>
+                                    echo count($shared);
+                                    ?>)</span></a></li>
                     </ul>
                 </li>
+                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
                 <li class='last'><a href='<?php echo base_url(); ?>index.php/myProfile'><span>Profile</span></a></li>
                 <li class='last'><a id="userLogout" href='<?php echo base_url(); ?>index.php/logout'>Logout</a></li>
-                <li class='last'><a id="shareDocs" href='<?php echo base_url(); ?>index.php/shareDocs'>Share Docs</a></li>
             </ul>
         </div>
 
         <div class="pageHeader">
-            <span id="mainHeading">CSE Central Project Repository</span><br>
+            <img src="<?php echo base_url(); ?>/images/siteBanner.png" class="resize">
         </div>
         <div class="container">
             <!-- Loads and view the images for the slide show-->
@@ -45,6 +45,19 @@
             </div>
             <div id="htmlcaption" class="nivo-html-caption">
                 <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+            </div>
+
+            <div id="cseIntro">
+                <div style="font-weight: bold;text-align: center">Department of Computer Science and Engineering</div><br>
+                Department of computer Science and Engineering at University of Moratuwa provides the best of the 
+                Computer Science Engineers in Sri Lanka. Not only in Sri Lanka, but also in other countries too, they have
+                a higher demand. The major objective of Department of Computer Science is to provide the best of the Best to the country
+            </div>
+
+            <div id="repoIntro">
+                <div style="font-weight: bold;text-align: center">CSE Central Project Repository</div><br>
+                CSE Central project Repository allows the CSE Students to keep their project document safe in one place
+                and provides the facility to share them with the other students who seek for knowledge
             </div>
         </div>
         <!--Set the footer -->
